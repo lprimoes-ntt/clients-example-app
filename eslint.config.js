@@ -26,7 +26,6 @@ export default tseslint.config(
       eslintPluginPrettierRecommended,
       eslintConfigPrettier,
     ],
-    rules: {},
-    ignores: ["src/index.html"],
+    rules: {}
   },
 )
