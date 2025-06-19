@@ -63,15 +63,17 @@ import { Component } from "@angular/core"
           <h3 class="mb-4 text-lg font-medium text-gray-900">Search & Filters</h3>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
             <div>
-              <label class="mb-2 block text-sm font-medium text-gray-700">Search</label>
+              <label for="search" class="mb-2 block text-sm font-medium text-gray-700">Search</label>
               <input
+                id="search"
                 type="text"
                 placeholder="Search items..."
                 class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
             </div>
             <div>
-              <label class="mb-2 block text-sm font-medium text-gray-700">Category</label>
+              <label for="category" class="mb-2 block text-sm font-medium text-gray-700">Category</label>
               <select
+                id="category"
                 class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none">
                 <option>All Categories</option>
                 <option>Electronics</option>
@@ -80,8 +82,9 @@ import { Component } from "@angular/core"
               </select>
             </div>
             <div>
-              <label class="mb-2 block text-sm font-medium text-gray-700">Status</label>
+              <label for="status" class="mb-2 block text-sm font-medium text-gray-700">Status</label>
               <select
+                id="status"
                 class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none">
                 <option>All Status</option>
                 <option>Active</option>
@@ -273,29 +276,33 @@ import { Component } from "@angular/core"
               <h4 class="text-md font-medium text-gray-700">Create/Edit Form</h4>
               <form class="space-y-4">
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Full Name</label>
+                  <label for="fullName" class="mb-2 block text-sm font-medium text-gray-700">Full Name</label>
                   <input
+                    id="fullName"
                     type="text"
                     placeholder="Enter full name"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
+                  <label for="emailAddress" class="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
                   <input
+                    id="emailAddress"
                     type="email"
                     placeholder="Enter email address"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Phone Number</label>
+                  <label for="phoneNumber" class="mb-2 block text-sm font-medium text-gray-700">Phone Number</label>
                   <input
+                    id="phoneNumber"
                     type="tel"
                     placeholder="Enter phone number"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Department</label>
+                  <label for="department" class="mb-2 block text-sm font-medium text-gray-700">Department</label>
                   <select
+                    id="department"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none">
                     <option>Select department</option>
                     <option>Engineering</option>
@@ -305,7 +312,7 @@ import { Component } from "@angular/core"
                   </select>
                 </div>
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Status</label>
+                  <label for="status" class="mb-2 block text-sm font-medium text-gray-700">Status</label>
                   <div class="flex space-x-4">
                     <label class="flex items-center">
                       <input type="radio" name="status" value="active" class="text-blue-600 focus:ring-blue-500" />
@@ -318,8 +325,9 @@ import { Component } from "@angular/core"
                   </div>
                 </div>
                 <div>
-                  <label class="mb-2 block text-sm font-medium text-gray-700">Notes</label>
+                  <label for="notes" class="mb-2 block text-sm font-medium text-gray-700">Notes</label>
                   <textarea
+                    id="notes"
                     rows="3"
                     placeholder="Enter notes"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>

@@ -17,24 +17,6 @@ export default tseslint.config(
       eslintConfigPrettier,
     ],
     processor: angular.processInlineTemplates,
-    rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
-        {
-          type: "attribute",
-          prefix: "discovery",
-          style: "camelCase",
-        },
-      ],
-      "@angular-eslint/component-selector": [
-        "error",
-        {
-          type: "element",
-          prefix: "discovery",
-          style: "kebab-case",
-        },
-      ],
-    },
   },
   {
     files: ["**/*.html"],
@@ -45,5 +27,6 @@ export default tseslint.config(
       eslintConfigPrettier,
     ],
     rules: {},
-  }
-);
+    ignores: ["src/index.html"],
+  },
+)

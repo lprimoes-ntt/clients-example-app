@@ -1,5 +1,5 @@
 import { JsonPipe } from "@angular/common"
-import { Component, computed, effect, signal } from "@angular/core"
+import { Component, computed, effect, inject, signal } from "@angular/core"
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
 
 @Component({
@@ -226,6 +226,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angula
   `,
 })
 export class SignalsComponent {
+  fb = inject(FormBuilder)
+
   // Basic signal
   count = signal(0)
 
@@ -255,7 +257,7 @@ export class SignalsComponent {
 
   // Reactive Forms with Signals
   profileForm: FormGroup
-  formData = signal<any>(null)
+  formData = signal<unknown>(null)
   submissionCount = signal(0)
 
   // Form state signals
@@ -263,7 +265,7 @@ export class SignalsComponent {
   formInvalid = computed(() => !this.formValid())
   formDirty = signal(false)
   formTouched = signal(false)
-  currentFormValue = signal<any>({})
+  currentFormValue = signal<unknown>({})
 
   // Individual field validation signals
   firstNameInvalid = signal(false)
@@ -271,7 +273,7 @@ export class SignalsComponent {
   emailInvalid = signal(false)
   phoneInvalid = signal(false)
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     // Initialize reactive form
     this.profileForm = this.fb.group({
       firstName: ["", [Validators.required, Validators.minLength(2)]],
