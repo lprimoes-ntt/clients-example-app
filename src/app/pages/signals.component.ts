@@ -319,7 +319,6 @@ export class SignalsComponent {
     effect(() => {
       const currentCount = this.count()
       const logMessage = `Count changed to: ${currentCount} at ${new Date().toLocaleTimeString()}`
-      console.log(logMessage)
       this.effectLog.set(logMessage)
     })
 
