@@ -1,59 +1,101 @@
-# ClientsExampleApp
+# Clients Example App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+A comprehensive Angular 20 example application demonstrating modern Angular development patterns, including CRUD components and Angular Signals.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- **CRUD Component Catalog**: Interactive examples of reusable CRUD components with search, filtering, and data table functionality
+- **Angular Signals Examples**: Comprehensive demonstrations of Angular's new Signals API
+- **Modern UI**: Built with Tailwind CSS for a clean, responsive design
+- **TypeScript**: Fully typed with modern TypeScript features
+- **Reactive Forms**: Advanced form handling with Signals integration
 
+## 📋 Prerequisites
+
+- Node.js (version 18 or higher)
+- npm or yarn package manager
+
+## 🛠️ Installation
+
+1. Clone the repository:
 ```bash
-ng serve
+git clone <repository-url>
+cd clients-example-app
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install dependencies:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3. Start the development server:
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+4. Open your browser and navigate to `http://localhost:4200`
 
-To build the project run:
+## 🏗️ Project Structure
 
-```bash
-ng build
+```
+src/
+├── app/
+│   ├── pages/
+│   │   ├── examples.component.ts    # CRUD component examples
+│   │   └── signals.component.ts     # Angular Signals demonstrations
+│   ├── app.routes.ts               # Application routing
+│   └── app.ts                      # Main application component
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📚 Examples Included
 
-## Running unit tests
+### CRUD Components (`/examples`)
+- **Navigation Bar**: Responsive navigation with active states
+- **Search & Filters**: Advanced filtering with multiple criteria
+- **Data Tables**: Interactive tables with sorting and actions
+- **Form Components**: Input fields, selects, and validation
+- **Action Buttons**: Edit, delete, and bulk operations
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Angular Signals (`/signals`)
+- **Basic Signals**: Simple state management with increment/decrement
+- **Computed Signals**: Derived state calculations
+- **Object Signals**: Complex object state management
+- **Array Signals**: List manipulation with add/remove operations
+- **Signal Updates**: Advanced update patterns and effects
+- **Reactive Forms**: Form integration with Signals validation
 
-```bash
-ng test
-```
+## 🎨 Styling
 
-## Running end-to-end tests
+This project uses **Tailwind CSS** for styling, providing:
+- Utility-first CSS framework
+- Responsive design out of the box
+- Modern component styling
+- Consistent design system
 
-For end-to-end (e2e) testing, run:
+## 🔧 Development
 
-```bash
-ng e2e
-```
+### Available Scripts
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm run watch` - Build and watch for changes
+- `npm test` - Run unit tests
 
-## Additional Resources
+### Code Quality
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The project includes:
+- **ESLint** for code linting
+- **Prettier** for code formatting
+- **TypeScript** for type safety
+
+## 🚀 Key Technologies
+
+- **Angular 20** - Latest Angular framework
+- **Angular Signals** - New reactive primitives
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type-safe JavaScript
+- **RxJS** - Reactive programming library
+
+## 📄 License
+
+This project has an MIT license and is created for educational purposes as part of an intern training program.
