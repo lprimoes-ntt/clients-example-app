@@ -1,10 +1,24 @@
 import { Component } from "@angular/core"
 
+/**
+ * Examples Component - CRUD Catalog Demo
+ *
+ * This component demonstrates various UI patterns and components commonly used in CRUD applications:
+ * - Navigation and layout patterns
+ * - Search and filtering interfaces
+ * - Data tables with pagination
+ * - Form components for create/edit operations
+ * - Card components for displaying data
+ * - Alert/notification components
+ * - Button variations and states
+ * - Loading states
+ * - Empty states
+ */
 @Component({
   selector: "app-examples",
   template: `
     <div class="min-h-screen bg-gray-50">
-      <!-- Navigation Bar -->
+      <!-- Navigation Bar - Demonstrates header navigation pattern -->
       <nav class="border-b border-gray-200 bg-white shadow-lg">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 justify-between">
@@ -12,6 +26,7 @@ import { Component } from "@angular/core"
               <div class="flex-shrink-0">
                 <h1 class="text-xl font-bold text-gray-900">CRUD Catalog</h1>
               </div>
+              <!-- Main navigation menu - shows active/inactive states -->
               <div class="ml-10 hidden md:block">
                 <div class="flex items-baseline space-x-4">
                   <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
@@ -27,6 +42,7 @@ import { Component } from "@angular/core"
                 </div>
               </div>
             </div>
+            <!-- Action button in header - demonstrates primary CTA placement -->
             <div class="flex items-center">
               <button class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
                 + New Item
@@ -36,7 +52,7 @@ import { Component } from "@angular/core"
         </div>
       </nav>
 
-      <!-- Page Header -->
+      <!-- Page Header - Shows page title, description, and action buttons -->
       <div class="bg-white shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between">
@@ -44,6 +60,7 @@ import { Component } from "@angular/core"
               <h2 class="text-3xl font-bold text-gray-900">Component Catalog</h2>
               <p class="mt-1 text-sm text-gray-500">A collection of reusable CRUD components</p>
             </div>
+            <!-- Secondary action buttons - Import/Export functionality -->
             <div class="flex space-x-3">
               <button class="rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200">
                 Export
@@ -56,12 +73,13 @@ import { Component } from "@angular/core"
         </div>
       </div>
 
-      <!-- Main Content -->
+      <!-- Main Content Area -->
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <!-- Search and Filters Section -->
+        <!-- Search and Filters Section - Demonstrates advanced filtering UI -->
         <div class="mb-6 rounded-lg bg-white p-6 shadow">
           <h3 class="mb-4 text-lg font-medium text-gray-900">Search & Filters</h3>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+            <!-- Text search input -->
             <div>
               <label for="search" class="mb-2 block text-sm font-medium text-gray-700">Search</label>
               <input
@@ -70,6 +88,7 @@ import { Component } from "@angular/core"
                 placeholder="Search items..."
                 class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
             </div>
+            <!-- Category dropdown filter -->
             <div>
               <label for="category" class="mb-2 block text-sm font-medium text-gray-700">Category</label>
               <select
@@ -81,6 +100,7 @@ import { Component } from "@angular/core"
                 <option>Books</option>
               </select>
             </div>
+            <!-- Status dropdown filter -->
             <div>
               <label for="status" class="mb-2 block text-sm font-medium text-gray-700">Status</label>
               <select
@@ -92,6 +112,7 @@ import { Component } from "@angular/core"
                 <option>Pending</option>
               </select>
             </div>
+            <!-- Apply filters button -->
             <div class="mb-[5px] flex items-end">
               <button class="w-full rounded-md bg-gray-600 px-3 py-2 text-sm font-medium text-white hover:bg-gray-700">
                 Apply Filters
@@ -100,11 +121,12 @@ import { Component } from "@angular/core"
           </div>
         </div>
 
-        <!-- Data Table Section -->
+        <!-- Data Table Section - Demonstrates complex data table with actions -->
         <div class="mb-6 overflow-hidden rounded-lg bg-white shadow">
           <div class="border-b border-gray-200 px-6 py-4">
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-medium text-gray-900">Data Table</h3>
+              <!-- View toggle buttons - List/Grid view options -->
               <div class="flex space-x-2">
                 <button class="text-gray-400 hover:text-gray-600">
                   <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,10 +149,12 @@ import { Component } from "@angular/core"
               </div>
             </div>
           </div>
+          <!-- Table with responsive design and hover effects -->
           <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
               <thead class="bg-gray-50">
                 <tr>
+                  <!-- Bulk selection checkbox -->
                   <th class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
                     <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
                   </th>
@@ -143,11 +167,13 @@ import { Component } from "@angular/core"
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white">
+                <!-- Table row with user data and status badges -->
                 <tr class="hover:bg-gray-50">
                   <td class="px-6 py-4 whitespace-nowrap">
                     <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
+                    <!-- User avatar and info display -->
                     <div class="flex items-center">
                       <div class="h-10 w-10 flex-shrink-0">
                         <div
@@ -162,11 +188,13 @@ import { Component } from "@angular/core"
                     </div>
                   </td>
                   <td class="px-6 py-4 text-sm whitespace-nowrap text-gray-900">{{ "john@example.com" }}</td>
+                  <!-- Status badge with color coding -->
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span class="inline-flex rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-800">
                       Active
                     </span>
                   </td>
+                  <!-- Action buttons for each row -->
                   <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
                     <div class="flex space-x-2">
                       <button class="text-blue-600 hover:text-blue-900">Edit</button>
@@ -174,6 +202,7 @@ import { Component } from "@angular/core"
                     </div>
                   </td>
                 </tr>
+                <!-- Second table row with different status -->
                 <tr class="hover:bg-gray-50">
                   <td class="px-6 py-4 whitespace-nowrap">
                     <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
@@ -209,7 +238,9 @@ import { Component } from "@angular/core"
               </tbody>
             </table>
           </div>
+          <!-- Pagination component with responsive design -->
           <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+            <!-- Mobile pagination -->
             <div class="flex flex-1 justify-between sm:hidden">
               <button
                 class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
@@ -220,6 +251,7 @@ import { Component } from "@angular/core"
                 Next
               </button>
             </div>
+            <!-- Desktop pagination with page numbers -->
             <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
               <div>
                 <p class="text-sm text-gray-700">
@@ -239,6 +271,7 @@ import { Component } from "@angular/core"
                         clip-rule="evenodd" />
                     </svg>
                   </button>
+                  <!-- Active page indicator -->
                   <button
                     class="relative inline-flex items-center border border-blue-500 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-600">
                     1
@@ -267,14 +300,15 @@ import { Component } from "@angular/core"
           </div>
         </div>
 
-        <!-- Form Components Section -->
+        <!-- Form Components Section - Demonstrates create/edit forms and UI components -->
         <div class="mb-6 rounded-lg bg-white p-6 shadow">
           <h3 class="mb-4 text-lg font-medium text-gray-900">Form Components</h3>
           <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <!-- Create/Edit Form -->
+            <!-- Create/Edit Form - Shows comprehensive form with validation patterns -->
             <div class="space-y-4">
               <h4 class="text-md font-medium text-gray-700">Create/Edit Form</h4>
               <form class="space-y-4">
+                <!-- Text input with label -->
                 <div>
                   <label for="fullName" class="mb-2 block text-sm font-medium text-gray-700">Full Name</label>
                   <input
@@ -283,6 +317,7 @@ import { Component } from "@angular/core"
                     placeholder="Enter full name"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
+                <!-- Email input with validation styling -->
                 <div>
                   <label for="emailAddress" class="mb-2 block text-sm font-medium text-gray-700">Email Address</label>
                   <input
@@ -291,6 +326,7 @@ import { Component } from "@angular/core"
                     placeholder="Enter email address"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
+                <!-- Phone input -->
                 <div>
                   <label for="phoneNumber" class="mb-2 block text-sm font-medium text-gray-700">Phone Number</label>
                   <input
@@ -299,6 +335,7 @@ import { Component } from "@angular/core"
                     placeholder="Enter phone number"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
+                <!-- Dropdown select -->
                 <div>
                   <label for="department" class="mb-2 block text-sm font-medium text-gray-700">Department</label>
                   <select
@@ -311,6 +348,7 @@ import { Component } from "@angular/core"
                     <option>HR</option>
                   </select>
                 </div>
+                <!-- Radio button group -->
                 <div>
                   <label for="status" class="mb-2 block text-sm font-medium text-gray-700">Status</label>
                   <div class="flex space-x-4">
@@ -324,6 +362,7 @@ import { Component } from "@angular/core"
                     </label>
                   </div>
                 </div>
+                <!-- Textarea for longer text input -->
                 <div>
                   <label for="notes" class="mb-2 block text-sm font-medium text-gray-700">Notes</label>
                   <textarea
@@ -332,6 +371,7 @@ import { Component } from "@angular/core"
                     placeholder="Enter notes"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
                 </div>
+                <!-- Form action buttons -->
                 <div class="flex space-x-3">
                   <button
                     type="submit"
@@ -347,11 +387,11 @@ import { Component } from "@angular/core"
               </form>
             </div>
 
-            <!-- Card Components -->
+            <!-- Card Components - Demonstrates different card layouts and patterns -->
             <div class="space-y-4">
               <h4 class="text-md font-medium text-gray-700">Card Components</h4>
 
-              <!-- User Card -->
+              <!-- User Card - Shows user information in a compact card format -->
               <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center space-x-4">
                   <img
@@ -362,6 +402,7 @@ import { Component } from "@angular/core"
                     <p class="truncate text-sm font-medium text-gray-900">John Doe</p>
                     <p class="truncate text-sm text-gray-500">{{ "john@example.com" }}</p>
                   </div>
+                  <!-- Card action buttons -->
                   <div class="flex space-x-2">
                     <button class="text-sm text-blue-600 hover:text-blue-900">Edit</button>
                     <button class="text-sm text-red-600 hover:text-red-900">Delete</button>
@@ -369,7 +410,7 @@ import { Component } from "@angular/core"
                 </div>
               </div>
 
-              <!-- Stats Card -->
+              <!-- Stats Card - Shows metrics with icon and value -->
               <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center">
                   <div class="flex-shrink-0">
@@ -392,8 +433,9 @@ import { Component } from "@angular/core"
                 </div>
               </div>
 
-              <!-- Alert Components -->
+              <!-- Alert Components - Demonstrates different notification types -->
               <div class="space-y-3">
+                <!-- Success alert -->
                 <div class="rounded-md border border-green-200 bg-green-50 p-4">
                   <div class="flex">
                     <div class="flex-shrink-0">
@@ -410,6 +452,7 @@ import { Component } from "@angular/core"
                   </div>
                 </div>
 
+                <!-- Error alert -->
                 <div class="rounded-md border border-red-200 bg-red-50 p-4">
                   <div class="flex">
                     <div class="flex-shrink-0">
@@ -426,6 +469,7 @@ import { Component } from "@angular/core"
                   </div>
                 </div>
 
+                <!-- Warning alert -->
                 <div class="rounded-md border border-yellow-200 bg-yellow-50 p-4">
                   <div class="flex">
                     <div class="flex-shrink-0">
@@ -446,10 +490,11 @@ import { Component } from "@angular/core"
           </div>
         </div>
 
-        <!-- Button Components -->
+        <!-- Button Components - Shows various button styles and states -->
         <div class="mb-6 rounded-lg bg-white p-6 shadow">
           <h3 class="mb-4 text-lg font-medium text-gray-900">Button Components</h3>
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <!-- Primary action buttons with different semantic colors -->
             <div>
               <h4 class="text-md mb-3 font-medium text-gray-700">Primary Actions</h4>
               <div class="flex flex-wrap gap-3">
@@ -467,6 +512,7 @@ import { Component } from "@angular/core"
                 </button>
               </div>
             </div>
+            <!-- Secondary and utility button styles -->
             <div>
               <h4 class="text-md mb-3 font-medium text-gray-700">Secondary Actions</h4>
               <div class="flex flex-wrap gap-3">
@@ -488,10 +534,11 @@ import { Component } from "@angular/core"
           </div>
         </div>
 
-        <!-- Loading States -->
+        <!-- Loading States - Demonstrates loading indicators for different actions -->
         <div class="mb-6 rounded-lg bg-white p-6 shadow">
           <h3 class="mb-4 text-lg font-medium text-gray-900">Loading States</h3>
           <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <!-- Generic loading state -->
             <div class="text-center">
               <div
                 class="inline-flex cursor-not-allowed items-center rounded-md bg-blue-500 px-4 py-2 text-sm leading-6 font-semibold text-white shadow transition duration-150 ease-in-out hover:bg-blue-400">
@@ -509,6 +556,7 @@ import { Component } from "@angular/core"
                 Loading...
               </div>
             </div>
+            <!-- Save operation loading state -->
             <div class="text-center">
               <div
                 class="inline-flex cursor-not-allowed items-center rounded-md bg-green-500 px-4 py-2 text-sm leading-6 font-semibold text-white shadow transition duration-150 ease-in-out hover:bg-green-400">
@@ -526,6 +574,7 @@ import { Component } from "@angular/core"
                 Saving...
               </div>
             </div>
+            <!-- Delete operation loading state -->
             <div class="text-center">
               <div
                 class="inline-flex cursor-not-allowed items-center rounded-md bg-red-500 px-4 py-2 text-sm leading-6 font-semibold text-white shadow transition duration-150 ease-in-out hover:bg-red-400">
@@ -546,10 +595,11 @@ import { Component } from "@angular/core"
           </div>
         </div>
 
-        <!-- Empty States -->
+        <!-- Empty States - Shows how to handle no data scenarios -->
         <div class="mb-6 rounded-lg bg-white p-6 shadow">
           <h3 class="mb-4 text-lg font-medium text-gray-900">Empty States</h3>
           <div class="py-12 text-center">
+            <!-- Empty state icon -->
             <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 stroke-linecap="round"
@@ -557,8 +607,10 @@ import { Component } from "@angular/core"
                 stroke-width="2"
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
+            <!-- Empty state messaging -->
             <h3 class="mt-2 text-sm font-medium text-gray-900">No items found</h3>
             <p class="mt-1 text-sm text-gray-500">Get started by creating a new item.</p>
+            <!-- Call-to-action button -->
             <div class="mt-6">
               <button
                 class="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700">
